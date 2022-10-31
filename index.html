@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Girobusan@github</title>
   <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
   <meta name="og:title" content="Girobusan@github">
   <meta name="og:description" content="Small tool">
   <meta name="og:image" content="">
@@ -48,41 +50,66 @@ color: #0384aa;
   "image": "",
   "icon": "",
   "filename": "index.html",
-  "footer": "<small>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> and <a href='https://matejlatin.github.io/Gutenberg/'>Gutenberg CSS</a></small>",
+  "footer": "&lt;small&gt;Powered by &lt;a href='https://github.com/girobusan/imp'&gt;IMP!&lt;/a&gt; and &lt;a href='https://matejlatin.github.io/Gutenberg/'&gt;Gutenberg CSS&lt;/a&gt;&lt;/small&gt;",
   "css": "#avatara{\nwidth: 140px;\nheight: 140px;\nborder-radius: 70px;\nmargin:0;\nmargin-top: 0rem;\nmargin-bottom: 2rem;\nmargin-right: 1rem;\nfloat: left;\n}\n\n@media(max-width:800px){\n#avatara{\n float: none;  \nmargin-bottom: -5rem;\n}\n}\n\nhr{\nwidth:100%;\nbackground-color: #0384aa;\nbackground-image: none;\nheight: 3px;\n}\n\nh1,h2,h3,h4{\ncolor: #0384aa;\n}",
   "headHTML": "",
   "editor": "https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js",
-  "viewCSS": "https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/style.css"
+  "viewCSS": "https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/style.css",
+  "author": "",
+  "keywords": ""
 }
   </script>
   <script>
     window.addEventListener("DOMContentLoaded" , function(){
-    function IMPEdit(){
-    console.info("Loading editor...")
-    const editor = document.createElement("script");
-    editor.id="editorScript";
-    editor.src="https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js";
-    document.head.appendChild(editor);
-  }
-  
-  var inIframe = false;
-  try{
-    inIframe = window.self!=window.top;
-  }catch(e){
-   inIframe = true;
-  }
-  if(inIframe){return;}
 
-  if(window.location.hash==="#view"){
-    return;
-  }
+        const replaceToTags = {
+        '&amp;':'&',
+        '&lt;': '<',
+        '&gt;': '>'
+        }
 
-  if(window.location.hash ==="#edit"){
-    IMPEdit();
-  }
-  if(window.location.protocol==="file:"){
-    IMPEdit();
-  }
+        function unescapeTags(s){
+        const replacer=(tag)=>{return replaceToTags[tag]||tag}
+        return s.replace(/&amp;|&lt;|&gt;/g , replacer);
+        }
+
+        function downloadMd(){
+        console.info("will download md");
+        const c = document.querySelector("#pageData");
+        const t = unescapeTags( c.innerHTML );
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(t));
+        element.setAttribute('download', "export.md");
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+        }
+
+
+      function IMPEdit(){
+      console.info("Loading editor...")
+      const editor = document.createElement("script");
+      editor.id="editorScript";
+      editor.src="https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js";
+      document.head.appendChild(editor);
+      }
+
+   if(window.self.name==="IMPPreviewIframe"){
+   return;
+   }
+   if(window.location.hash==="#view"){
+   return;
+   }
+   if(window.location.hash==="#md"){
+   return downloadMd();
+   }
+   if(window.location.hash ==="#edit" 
+   ){
+   IMPEdit();
+   }
+   if(window.location.protocol==="file:"){
+   IMPEdit();
+   }
 })
 
 window.addEventListener("hashchange", ()=>history.go(0));
@@ -94,13 +121,15 @@ window.addEventListener("hashchange", ()=>history.go(0));
 <h1>Girobusan</h1>
 <p><big>Interactive designer with passion to programming</big></p>
 <hr>
-<h3>Projects here</h3>
+<h3>Project sites</h3>
 <ul>
 <li>Smallest CMS in the world — <a href="imp/index.html">IMP!</a></li>
+<li>Client-side markdown CMS/Viewer/Editor — <a href="mmds/">My Markdown Site</a></li>
 </ul>
 </div>
 <footer id="pageFooter"><small>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> and <a href='https://matejlatin.github.io/Gutenberg/'>Gutenberg CSS</a></small></footer>
 <script id="pageData" type="text/markdown">
+
 
 &lt;img src="girobusan.png" id="avatara"&gt;
 
@@ -109,9 +138,11 @@ window.addEventListener("hashchange", ()=>history.go(0));
 &lt;big&gt;Interactive designer with passion to programming&lt;/big&gt;
 
 ----
-### Projects here
+### Project sites
 
 - Smallest CMS in the world — [IMP!](imp/index.html)
+- Client-side markdown CMS/Viewer/Editor — [My Markdown Site](mmds/)
+
 
 </script>
 </body>
