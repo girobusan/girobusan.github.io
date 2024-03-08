@@ -62,46 +62,19 @@ color: #0384aa;
   <script>
     window.addEventListener("DOMContentLoaded" , function(){
 
-        const replaceToTags = {
-        '&amp;':'&',
-        '&lt;': '<',
-        '&gt;': '>'
-        }
-
-        function unescapeTags(s){
-        const replacer=(tag)=>{return replaceToTags[tag]||tag}
-        return s.replace(/&amp;|&lt;|&gt;/g , replacer);
-        }
-
-        function downloadMd(){
-        console.info("will download md");
-        const c = document.querySelector("#pageData");
-        const t = unescapeTags( c.innerHTML );
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(t));
-        element.setAttribute('download', "export.md");
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
-        }
-
-
-      function IMPEdit(){
-      console.info("Loading editor...")
-      const editor = document.createElement("script");
-      editor.id="editorScript";
-      editor.src="https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js";
-      document.head.appendChild(editor);
-      }
+   function IMPEdit(){
+   console.info("Loading editor...")
+   const editor = document.createElement("script");
+   editor.id="editorScript";
+   editor.src="https://cdn.jsdelivr.net/gh/girobusan/imp@latest/dist/imp.js";
+   document.head.appendChild(editor);
+   }
 
    if(window.self.name==="IMPPreviewIframe"){
    return;
    }
    if(window.location.hash==="#view"){
    return;
-   }
-   if(window.location.hash==="#md"){
-   return downloadMd();
    }
    if(window.location.hash ==="#edit" 
    ){
@@ -121,14 +94,16 @@ window.addEventListener("hashchange", ()=>history.go(0));
 <h1>Girobusan</h1>
 <p><big>Interactive designer with passion to programming</big></p>
 <hr>
-<h3>Project sites</h3>
+<h3>Projects</h3>
 <ul>
 <li>Smallest CMS in the world — <a href="imp/index.html">IMP!</a></li>
 <li>Client-side markdown CMS/Viewer/Editor — <a href="mmds/">My Markdown Site</a></li>
+<li>Js-fiddle like tool for local use, packs everything in one file — <a href="imp-fiddle/">Imp Fiddle</a></li>
 </ul>
 </div>
 <footer id="pageFooter"><small>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> and <a href='https://matejlatin.github.io/Gutenberg/'>Gutenberg CSS</a></small></footer>
 <script id="pageData" type="text/markdown">
+
 
 
 &lt;img src="girobusan.png" id="avatara"&gt;
@@ -138,10 +113,12 @@ window.addEventListener("hashchange", ()=>history.go(0));
 &lt;big&gt;Interactive designer with passion to programming&lt;/big&gt;
 
 ----
-### Project sites
+### Projects
 
 - Smallest CMS in the world — [IMP!](imp/index.html)
 - Client-side markdown CMS/Viewer/Editor — [My Markdown Site](mmds/)
+- Js-fiddle like tool for local use, packs everything in one file — [Imp Fiddle](imp-fiddle/)
+
 
 
 </script>
