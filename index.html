@@ -12,6 +12,7 @@
   <meta name="og:image" content="">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="">
+  <base target="_blank">
   <link rel="icon" type="image/png" href="favicon.png">
   <link id = "viewCSS" rel="stylesheet" href="style.css">
   <style id="customCSS">#avatara{
@@ -62,22 +63,17 @@ border-top: none !important;
   "author": "Girobusan",
   "keywords": ""
 }
-   window.savedWithImpVersion = "0.3.1"
+   window.savedWithImpVersion = "0.4.1"
   </script>
   <script>
     window.addEventListener("DOMContentLoaded" , function(){
-
+  
    function IMPEdit(){
    console.info("Loading editor...")
    const editor = document.createElement("script");
    editor.id="editorScript";
    editor.src="imp.js";
    document.head.appendChild(editor);
-   }
-
-   if(window.self.name==="IMPPreviewIframe")
-   {
-   return;
    }
    if(window.location.search.indexOf("mode=view")!=-1)
    {
@@ -95,6 +91,7 @@ border-top: none !important;
    if(window.location.protocol==="file:"){
    IMPEdit();
    }
+  
 })
   </script>
   <!--custom html here-->
@@ -110,8 +107,8 @@ border-top: none !important;
 ⛺ <strong><a href="mmds/">My Markdown Site</a></strong> — Client-side markdown CMS/Viewer/Editor<br />
 🎻 <strong><a href="imp-fiddle/">Imp Fiddle</a></strong> — Js-fiddle like tool for local use, which packs everything in one file</p>
 <h3>Experimental</h3>
-<p>🐻 <strong><a href="https://girobusan.github.io/bare-mde/">Bare MDE</a></strong> — Mimimalistic embeddable markdown editor <br/>
-🔧 <strong><a href="https://github.com/girobusan/one-line-md-viewer">One line markdown viewer</a></strong><br />
+<p>🐻 <strong><a href="https://girobusan.github.io/bare-mde/">Bare MDE</a></strong> — Mimimalistic embeddable markdown editor<br>
+🔧 <strong><a href="https://github.com/girobusan/one-line-md-viewer">One line markdown viewer</a></strong><br>
 🗃️ <strong><a href="https://github.com/girobusan/cardister">Cardister</a></strong> —  self-contained, self-saved <em>thing</em> with cards</p>
 </main>
 <footer id="pageFooter"><small>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> and <a href='https://matejlatin.github.io/Gutenberg/'>Gutenberg CSS</a></small></footer>
@@ -132,8 +129,8 @@ border-top: none !important;
  
  ### Experimental
  
- :bear: **[Bare MDE](https://girobusan.github.io/bare-mde/)** — Mimimalistic embeddable markdown editor &lt;br/&gt;
- :wrench: **[One line markdown viewer](https://github.com/girobusan/one-line-md-viewer)**&lt;br /&gt;
+ :bear: **[Bare MDE](https://girobusan.github.io/bare-mde/)** — Mimimalistic embeddable markdown editor  
+ :wrench: **[One line markdown viewer](https://github.com/girobusan/one-line-md-viewer)**  
 :card_file_box: **[Cardister](https://github.com/girobusan/cardister)** —  self-contained, self-saved *thing* with cards</script>
 </body>
 </html>
