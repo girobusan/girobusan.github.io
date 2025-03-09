@@ -9,11 +9,52 @@
   <meta name="keywords" content="">
   <meta name="og:title" content="Girobusan@github">
   <meta name="og:description" content="Girobusan's home page at Github.">
-  <meta name="og:image" content="">
+  <meta name="og:image" content="undefined">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="">
-  <base target="_blank">
+  <meta name="twitter:image" content="undefined">
   <link rel="icon" type="image/png" href="favicon.png">
+  <script>
+   window.settings = {
+  "title": "Girobusan@github",
+  "description": "Girobusan's home page at Github.",
+  "icon": "favicon.png",
+  "filename": "index.html",
+  "footer": "&lt;small&gt;Powered by &lt;a href='https://github.com/girobusan/imp'&gt;IMP!&lt;/a&gt; and &lt;a href='https://matejlatin.github.io/Gutenberg/'&gt;Gutenberg CSS&lt;/a&gt;&lt;/small&gt;",
+  "css": "#avatara{\nwidth: 140px;\nheight: 140px;\nborder-radius: 70px;\nmargin:0;\nmargin-top: 0rem;\nmargin-bottom: 2rem;\nmargin-right: 1rem;\nfloat: left;\n}\n\n@media(max-width:800px){\n#avatara{\n float: none;  \nmargin-bottom: -5rem;\n}\n}\n\nhr{\nwidth:100%;\nbackground-color: #0384aa;\nbackground-image: none;\nheight: 3px;\n}\n\nh1,h2,h3,h4{\ncolor: #0384aa;\n}\n\n#pageFooter{\nborder-top: none !important;\n}",
+  "customCSS": "#avatara{\nwidth: 140px;\nheight: 140px;\nborder-radius: 70px;\nmargin:0;\nmargin-top: 0rem;\nmargin-bottom: 2rem;\nmargin-right: 1rem;\nfloat: left;\n}\n\n@media(max-width:800px){\n#avatara{\n float: none;  \nmargin-bottom: -5rem;\n}\n}\n\nhr{\nwidth:100%;\nbackground-color: #0384aa;\nbackground-image: none;\nheight: 3px;\n}\n\nh1,h2,h3,h4{\ncolor: #0384aa;\n}\n\n#pageFooter{\nborder-top: none !important;\n}",
+  "author": "Girobusan"
+};
+   window.savedWithImpVersion = "0.6.0"
+  </script>
+
+  <script defer>
+      (
+        function () {
+          function IMPEdit() {
+            console.info("Loading editor...")
+            const editor = document.createElement("script");
+            editor.id = "editorScript";
+            editor.src = "imp.js";
+            document.head.appendChild(editor);
+          }
+         var S = window.location.search.toLowerCase();
+          if (S.indexOf("mode=edit") != -1) {
+            IMPEdit();
+            return;
+          }
+          if (S.indexOf("mode=download") != -1) {
+            IMPEdit();
+            return;
+          }
+          if (window.location.protocol === "file:" &&
+            S.indexOf("mode=view") == -1) {
+            IMPEdit();
+          }
+        }
+      )();
+</script>
+
+  
   <link id = "viewCSS" rel="stylesheet" href="style.css">
   <style id="customCSS">#avatara{
 width: 140px;
@@ -46,58 +87,11 @@ color: #0384aa;
 
 #pageFooter{
 border-top: none !important;
-}
-  </style>
-  <script>
-   window.settings = {
-  "title": "Girobusan@github",
-  "description": "Girobusan's home page at Github.",
-  "image": "",
-  "icon": "favicon.png",
-  "filename": "index.html",
-  "footer": "&lt;small&gt;Powered by &lt;a href='https://github.com/girobusan/imp'&gt;IMP!&lt;/a&gt; and &lt;a href='https://matejlatin.github.io/Gutenberg/'&gt;Gutenberg CSS&lt;/a&gt;&lt;/small&gt;",
-  "css": "#avatara{\nwidth: 140px;\nheight: 140px;\nborder-radius: 70px;\nmargin:0;\nmargin-top: 0rem;\nmargin-bottom: 2rem;\nmargin-right: 1rem;\nfloat: left;\n}\n\n@media(max-width:800px){\n#avatara{\n float: none;  \nmargin-bottom: -5rem;\n}\n}\n\nhr{\nwidth:100%;\nbackground-color: #0384aa;\nbackground-image: none;\nheight: 3px;\n}\n\nh1,h2,h3,h4{\ncolor: #0384aa;\n}\n\n#pageFooter{\nborder-top: none !important;\n}",
-  "headHTML": "",
-  "editor": "",
-  "viewCSS": "",
-  "author": "Girobusan",
-  "keywords": ""
-}
-   window.savedWithImpVersion = "0.4.1"
-  </script>
-  <script>
-    window.addEventListener("DOMContentLoaded" , function(){
-  
-   function IMPEdit(){
-   console.info("Loading editor...")
-   const editor = document.createElement("script");
-   editor.id="editorScript";
-   editor.src="imp.js";
-   document.head.appendChild(editor);
-   }
-   if(window.location.search.indexOf("mode=view")!=-1)
-   {
-   return;
-   }
-   if(window.location.search.indexOf("mode=edit")!=-1)
-   {
-   IMPEdit();
-   return;
-   }
-   if(window.location.search.indexOf("mode=download")!=-1){
-   IMPEdit();
-   return;
-   }
-   if(window.location.protocol==="file:"){
-   IMPEdit();
-   }
-  
-})
-  </script>
+}</style>
   <!--custom html here-->
 </head>
 <body>
-<main class='container'><img src="girobusan.png" id="avatara">
+<main class="container" id="pageMain"><img src="girobusan.png" id="avatara">
 <h1>Girobusan</h1>
 <p><big>Interactive media designer with passion to programming</big></p>
 <p>🏢 <a href="https://github.com/girobusan">My github</a></p>
@@ -105,13 +99,16 @@ border-top: none !important;
 <h3>Active/useful projects</h3>
 <p>😈 <strong><a href="imp/index.html">IMP!</a></strong> — Smallest CMS in the world <br />
 ⛺ <strong><a href="mmds/">My Markdown Site</a></strong> — Client-side markdown CMS/Viewer/Editor<br />
-🎻 <strong><a href="imp-fiddle/">Imp Fiddle</a></strong> — Js-fiddle like tool for local use, which packs everything in one file</p>
+🎻 <strong><a href="imp-fiddle/">Imp Fiddle</a></strong> — Js-fiddle like tool for local use, which packs everything in one file<br>
+♟️ <strong><a href="maze-tool">Maze game positions generator</a></strong> — Tool for generating/sharing positions for <a href="https://boardgamegeek.com/boardgame/6268/maze">Maze game (1982)</a>.</p>
 <h3>Experimental</h3>
 <p>🐻 <strong><a href="https://girobusan.github.io/bare-mde/">Bare MDE</a></strong> — Mimimalistic embeddable markdown editor<br>
 🔧 <strong><a href="https://github.com/girobusan/one-line-md-viewer">One line markdown viewer</a></strong><br>
 🗃️ <strong><a href="https://github.com/girobusan/cardister">Cardister</a></strong> —  self-contained, self-saved <em>thing</em> with cards</p>
 </main>
-<footer id="pageFooter"><small>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> and <a href='https://matejlatin.github.io/Gutenberg/'>Gutenberg CSS</a></small></footer>
+<footer id='pageFooter'><small>Powered by <a href='https://github.com/girobusan/imp'>IMP!</a> and <a href='https://matejlatin.github.io/Gutenberg/'>Gutenberg CSS</a></small></footer>
+
+<script>window.impData={}</script>
 <script id="pageData" type="text/markdown">&lt;img src="girobusan.png" id="avatara"&gt;
 
 # Girobusan
@@ -125,7 +122,8 @@ border-top: none !important;
 
 :smiling_imp: **[IMP!](imp/index.html)** — Smallest CMS in the world &lt;br /&gt;
 :tent: **[My Markdown Site](mmds/)** — Client-side markdown CMS/Viewer/Editor&lt;br /&gt;
- :violin: **[Imp Fiddle](imp-fiddle/)** — Js-fiddle like tool for local use, which packs everything in one file
+ :violin: **[Imp Fiddle](imp-fiddle/)** — Js-fiddle like tool for local use, which packs everything in one file  
+:chess_pawn: **[Maze game positions generator](maze-tool)** — Tool for generating/sharing positions for [Maze game (1982)](https://boardgamegeek.com/boardgame/6268/maze).
  
  ### Experimental
  
